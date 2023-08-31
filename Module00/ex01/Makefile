@@ -5,20 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/15 19:22:42 by tmarts            #+#    #+#              #
-#    Updated: 2023/08/21 16:08:19 by tmarts           ###   ########.fr        #
+#    Created: 2023/08/28 19:07:19 by tmarts            #+#    #+#              #
+#    Updated: 2023/08/28 19:10:34 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= megaphone
-CPP			= c++
+NAME		= phonebook
+CPP			= c++;
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRC			= megaphone.cpp
+SRC			= Contact.cpp PhoneBook.cpp main.cpp
+INC			= Contact.hpp PhoneBook.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
-all	: $(NAME)
-$(OBJ_DIR)/%.o : %.cpp
+all : $(NAME)
+$(OBJ_DIR)/%.o : %.cpp $(INC)
 	@mkdir -p $(dir $@)
 	$(CPP) $(FLAGS) -c $< -o $@
 $(NAME) : $(OBJ)

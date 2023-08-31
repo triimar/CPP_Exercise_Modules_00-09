@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:01 by tmarts            #+#    #+#             */
-/*   Updated: 2023/08/30 15:39:35 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/08/31 15:32:17 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,3 @@ std::string Contact::getDarkestSecret() const {
 	
 	return this->_DarkestSecret;
 }
-
-// void	Contact::displayContactData(void) const {
-// 	std::cout << this->_FirstName  << "   -   " << this->_LastName << "   -   " << this->_Nickname << std::endl;
-// 	std::cout << this->_PhoneNumber  << "   -   " << this->_DarkestSecret << std::endl;
-// }

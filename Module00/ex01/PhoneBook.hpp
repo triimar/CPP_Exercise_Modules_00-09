@@ -6,12 +6,17 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:37 by tmarts            #+#    #+#             */
-/*   Updated: 2023/08/30 16:52:00 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/08/31 18:44:42 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 
 class	PhoneBook {
 private:
@@ -19,13 +24,13 @@ private:
 	int		_ContactsSet;
 	int		_ContactIndex;
 	
-	std::string	_askContactData(std::string Prompt);
+	std::string	_askInput(std::string Prompt);
 	void		_updateIndex();
 	void		_updateContactsSet();
 	int			_getIndex() const;
 	int			_getContactsSet() const;
 	int			_askSearchIndex();
-	std::string _turnicate(std::string str);
+	std::string _truncater(std::string str);
 	void		_displayContact(int index) const;
 	bool		_isValidInput(const std::string input);
 	
@@ -37,3 +42,5 @@ public:
 	void		addContact();
 	void		searchContacts();
 };
+
+#endif

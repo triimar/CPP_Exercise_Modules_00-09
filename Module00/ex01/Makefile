@@ -6,18 +6,17 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/28 19:07:19 by tmarts            #+#    #+#              #
-#    Updated: 2023/08/28 19:10:34 by tmarts           ###   ########.fr        #
+#    Updated: 2023/08/31 15:30:38 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
-CPP			= c++;
+CPP			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRC			= Contact.cpp PhoneBook.cpp main.cpp
+SRC			= main.cpp PhoneBook.cpp Contact.cpp
 INC			= Contact.hpp PhoneBook.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
-
 all : $(NAME)
 $(OBJ_DIR)/%.o : %.cpp $(INC)
 	@mkdir -p $(dir $@)

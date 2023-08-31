@@ -6,12 +6,16 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:31 by tmarts            #+#    #+#             */
-/*   Updated: 2023/08/30 15:40:18 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/08/31 17:48:20 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <iostream>
 #include <string>
+
 
 class	Contact {
 
@@ -38,6 +42,6 @@ public:
 	std::string getNickname() const;
 	std::string getPhoneNumber() const;
 	std::string getDarkestSecret() const;
-	
-	// void	displayContactData() const;
 };
+
+#endif

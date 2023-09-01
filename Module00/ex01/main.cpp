@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:05 by tmarts            #+#    #+#             */
-/*   Updated: 2023/08/31 15:32:23 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/01 15:51:59 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ int	main() {
 		else if (input == "EXIT")
 			break;
 	}
+	return 0;
 }

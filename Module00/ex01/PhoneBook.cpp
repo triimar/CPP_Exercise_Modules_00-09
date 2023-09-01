@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:27 by tmarts            #+#    #+#             */
-/*   Updated: 2023/08/31 19:49:57 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/01 16:15:09 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ std::string	PhoneBook::_askInput(std::string Prompt) {
 		std::getline(std::cin, input);
 		if (!input.empty() && _isValidInput(input))
 			break;
-		std::cout << "Fieled cannot be left empty!" << std::endl;
-		// std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Field cannot be left empty!" << std::endl;
 	}
 	return input;
 }
@@ -106,9 +105,9 @@ int PhoneBook::_askSearchIndex() {
 	std::getline(std::cin, input);
 	for (const char *c = input.c_str(); *c != '\0'; ++c) {
 		if (!std::isdigit(static_cast<unsigned char>(*c))) {
-			std::cout << "Index has to be numeric" << std::endl;
+			std::cout << "Not a valid index" << std::endl;
 			return -1;
-		}		
+		}
 	}
 	std::stringstream ss(input);
 	if (ss >> index) {

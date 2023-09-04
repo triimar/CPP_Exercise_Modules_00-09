@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 17:38:12 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 13:41:15 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/04 18:51:25 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/04 18:58:49 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include<iostream>
+#include "Harl.hpp"
 
-int	main() {
+Harl::Harl() {
 
-	Zombie	*oneUndead = newZombie("Ursula");
-	oneUndead->announce();
+}
+
+Harl::~Harl() {
 	
-	randomChump("John Doe");
-	delete oneUndead;
-	return 0;
+}
+	
+void Harl::debug() {
+	
+}
+
+void Harl::info() {
+	
+}
+
+void Harl::warning() {
+	
+}
+
+void Harl::error() {
+	
+}
+
+void    Harl::complain(std::string level) {
+	
 }

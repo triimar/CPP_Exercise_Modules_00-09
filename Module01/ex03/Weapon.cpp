@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 17:38:12 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 13:41:15 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/04 14:50:30 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/04 17:57:34 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int	main() {
-
-	Zombie	*oneUndead = newZombie("Ursula");
-	oneUndead->announce();
+Weapon::Weapon(std::string type): _type(type) {
 	
-	randomChump("John Doe");
-	delete oneUndead;
-	return 0;
+}
+Weapon::~Weapon() {
+	
+}
+
+void Weapon::setType(std::string newType) {
+
+	this->_type = newType;
+}
+
+std::string	const & Weapon::getType() {
+	
+	return _type;
 }

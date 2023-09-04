@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 17:38:12 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 13:41:15 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/04 14:56:54 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/04 16:12:00 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int	main() {
+#include "Weapon.hpp"
 
-	Zombie	*oneUndead = newZombie("Ursula");
-	oneUndead->announce();
+class HumanA
+{
+private:
+	std::string _name;
+	Weapon		&_weapon;
 	
-	randomChump("John Doe");
-	delete oneUndead;
-	return 0;
-}
+public:
+	HumanA(std::string name, Weapon &weapon);
+	~HumanA();
+	void attack();
+};
+
+
+#endif

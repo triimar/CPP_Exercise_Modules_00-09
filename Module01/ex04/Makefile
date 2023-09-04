@@ -5,20 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/01 17:38:05 by tmarts            #+#    #+#              #
-#    Updated: 2023/09/04 13:52:17 by tmarts           ###   ########.fr        #
+#    Created: 2023/09/04 18:21:56 by tmarts            #+#    #+#              #
+#    Updated: 2023/09/04 18:22:37 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= moar_brainzzz
+NAME		= filestreams
 CPP			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRC			= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-INC			= Zombie.hpp
+SRC			= main.cpp 
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)
-$(OBJ_DIR)/%.o : %.cpp $(INC)
+$(OBJ_DIR)/%.o : %.cpp
 	@mkdir -p $(dir $@)
 	$(CPP) $(FLAGS) -c $< -o $@
 $(NAME) : $(OBJ)

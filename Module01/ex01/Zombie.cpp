@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 17:38:12 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 13:41:15 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/01 17:38:25 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/04 13:40:41 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main() {
+Zombie::Zombie() {
 
-	Zombie	*oneUndead = newZombie("Ursula");
-	oneUndead->announce();
+}
+
+Zombie::~Zombie() {
 	
-	randomChump("John Doe");
-	delete oneUndead;
-	return 0;
+	std::cout << ">> " << this->_name << " has lost it's head " << "<<" <<std::endl;
+}
+
+void Zombie::setName(std::string name) {
+	
+	this->_name = name;
+}
+
+void Zombie::announce() {
+	
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

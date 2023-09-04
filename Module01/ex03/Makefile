@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/01 17:38:05 by tmarts            #+#    #+#              #
-#    Updated: 2023/09/04 13:52:17 by tmarts           ###   ########.fr        #
+#    Created: 2023/09/04 14:33:08 by tmarts            #+#    #+#              #
+#    Updated: 2023/09/04 14:35:01 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= moar_brainzzz
+NAME		= violence
 CPP			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRC			= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-INC			= Zombie.hpp
+SRC			= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+INC			= Weapon.hpp HumanA.hpp HumanB.cpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

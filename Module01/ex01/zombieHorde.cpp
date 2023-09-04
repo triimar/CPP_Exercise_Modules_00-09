@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 17:38:12 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 13:41:15 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/04 13:32:31 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/04 13:50:50 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main() {
-
-	Zombie	*oneUndead = newZombie("Ursula");
-	oneUndead->announce();
+Zombie*    zombieHorde(int N, std::string name) {
 	
-	randomChump("John Doe");
-	delete oneUndead;
-	return 0;
+	Zombie *horde = new Zombie[N];
+	for (int i = 0; i < N; ++i) {
+		horde[i].setName(name);
+	}
+	return horde;
 }

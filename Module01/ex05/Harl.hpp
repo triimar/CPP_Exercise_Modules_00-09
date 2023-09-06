@@ -6,13 +6,14 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:51:34 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 18:58:18 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/06 18:35:46 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 
+#include<iostream>
 #include<string>
 
 class	Harl {

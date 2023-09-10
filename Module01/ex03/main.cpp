@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:12:45 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/04 18:30:01 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/09 18:17:06 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main()
 	jim.attack();
 	std::cout << std::endl;
 	
-	system("leaks violence");
+	// system("leaks violence");
 	return 0;
 } 
 

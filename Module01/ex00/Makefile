@@ -6,11 +6,11 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 17:38:05 by tmarts            #+#    #+#              #
-#    Updated: 2023/09/04 13:52:17 by tmarts           ###   ########.fr        #
+#    Updated: 2023/09/09 17:59:34 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= moar_brainzzz
+NAME		= brainzzz
 CPP			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRC			= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp

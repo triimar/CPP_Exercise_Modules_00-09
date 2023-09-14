@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 18:21:15 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/13 15:41:59 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/13 16:27:04 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::min(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+	
 	
 	std::cout << std::endl << "=== Comparisons ===" << std::endl;
 	std::cout << "a > b? : " << (a > b) << std::endl;

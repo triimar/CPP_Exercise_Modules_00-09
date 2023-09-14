@@ -5,28 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 19:06:05 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:41:08 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/14 16:39:52 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/14 21:26:02 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "ClapTrap.hpp"
 
-int	main() {
-
-	PhoneBook	myPhoneBook;
-	std::string	input;
-
-	while (true) // should check if stream is good std::cin.good() otherwise EOF can cause a problem
-	{
-		std::cout << "Insert command (ADD / SEARCH / EXIT)" << std::endl;
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			myPhoneBook.addContact();
-		else if (input == "SEARCH")
-			myPhoneBook.searchContacts();
-		else if (input == "EXIT")
-			break;
-	}
-	return 0;
+int main(void)
+{
+	ClapTrap a("Jupi");
+	// ClapTrap Mai(a);
+	// ClapTrap Nameless;
+	// ClapTrap Nameless = a;
+	
+	a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	// a.attack("the mosquito");
+	a.takeDamage(7);
+	a.beRepaired(3);
+	a.attack("the mosquito");
+	a.takeDamage(7);
+	a.beRepaired(3);
+	
 }

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/08 15:08:05 by tmarts            #+#    #+#              #
-#    Updated: 2023/09/10 18:12:47 by tmarts           ###   ########.fr        #
+#    Created: 2023/09/13 18:57:54 by tmarts            #+#    #+#              #
+#    Updated: 2023/09/14 18:08:36 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= fixed01
+NAME		= clapSerena
 CPP			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRC			= main.cpp Fixed.cpp
-INC			= Fixed.hpp
+SRC			= main.cpp ClapTrap.cpp ScavTrap.cpp
+INC			= ClapTrap.hpp ScavTrap.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

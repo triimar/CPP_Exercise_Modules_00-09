@@ -5,28 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 19:06:05 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:41:08 by tmarts           ###   ########.fr       */
+/*   Created: 2023/09/14 16:39:52 by tmarts            #+#    #+#             */
+/*   Updated: 2023/09/14 21:26:35 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "ScavTrap.hpp"
 
-int	main() {
-
-	PhoneBook	myPhoneBook;
-	std::string	input;
-
-	while (true) // should check if stream is good std::cin.good() otherwise EOF can cause a problem
-	{
-		std::cout << "Insert command (ADD / SEARCH / EXIT)" << std::endl;
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			myPhoneBook.addContact();
-		else if (input == "SEARCH")
-			myPhoneBook.searchContacts();
-		else if (input == "EXIT")
-			break;
-	}
-	return 0;
+int main(void)
+{
+	ClapTrap b("Tobu");
+	ScavTrap Liilu("Liilu");
+	ScavTrap a(Liilu);
+	
+	std::cout << std::endl;
+	a.attack("the wall");
+	a.takeDamage(7);
+	a.beRepaired(3);
+	a.attack("the mosquito");
+	a.takeDamage(7);
+	a.beRepaired(3);
+	a.guardGate();
+	std::cout << std::endl;
+		
+	b.attack("the wall");
+	b.takeDamage(7);
+	b.beRepaired(3);
+	b.attack("the mosquito");
+	b.takeDamage(7);
+	b.beRepaired(3);
+	std::cout << std::endl;
 }

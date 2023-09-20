@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:45 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 17:16:18 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:33:25 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Animal(const Animal& rhs);
 	Animal& operator=(const Animal &rhs);
 	
-	std::string	getType() const;
+	std::string		getType() const;
 	virtual void	makeSound() const;
 };
 

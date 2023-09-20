@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:26:53 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 19:00:55 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:16:46 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Brain::Brain(const Brain &rhs) {
 
 Brain &Brain::operator=(const Brain &rhs) {
     std::cout << "Brain copy assignment operator called" << std::endl;
-	
     for (int i = 0; i < 100; i++) {
         this->ideas[i] = rhs.ideas[i];
     }

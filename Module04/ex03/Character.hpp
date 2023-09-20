@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:38:06 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/19 20:35:25 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 17:12:24 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class Character : public ICharacter
 {
 private:
 	AMateria		*_inventory[4];
-	int				_recentlyAccessed;
+	int				_invSlot;
+	AMateria		*_unequippedI[4];
+	int				_trashNr;		
 	std::string		_name;
 	
 	Character();

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:36 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 20:12:55 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:02:09 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ Cat::Cat(const Cat& rhs) {
 	
 Cat& Cat::operator=(const Cat& rhs) {
 	std::cout << "Cat copy assignment operator called" << std::endl;
-	this->type = rhs.type;
-	*this->_brain = *rhs._brain;
+	if ( this != &rhs) {
+		this->type = rhs.type;
+		*this->_brain = *rhs._brain;
+	}
 	return *this;
 }
 

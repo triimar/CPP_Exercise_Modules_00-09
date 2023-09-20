@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:32 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 15:00:39 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:50:59 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ Animal::~Animal() {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& rhs) {
+Animal::Animal(const Animal& rhs): type(rhs.type) {
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 Animal& Animal::operator=(const Animal &rhs) {
-	
-	this->type = rhs.type;
 	std::cout << "Animal assignment operator called" << std::endl;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

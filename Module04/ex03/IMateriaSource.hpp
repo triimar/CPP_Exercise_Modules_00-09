@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:52:58 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/19 20:37:27 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:28:31 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class IMateriaSource
 {
 public:
 	virtual ~IMateriaSource() {}
-
 	virtual void learnMateria(AMateria*) = 0;
 	virtual AMateria* createMateria(std::string const & type) = 0;
 };

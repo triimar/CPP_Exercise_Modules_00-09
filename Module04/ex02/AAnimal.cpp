@@ -20,15 +20,15 @@ AAnimal::~AAnimal() {
 	std::cout << "AAnimal destructor called" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal& rhs) {
+AAnimal::AAnimal(const AAnimal& rhs): type(rhs.type) {
 	std::cout << "AAnimal copy constructor called" << std::endl;
-	*this = rhs;
 }
 
 AAnimal& AAnimal::operator=(const AAnimal &rhs) {
 	
-	this->type = rhs.type;
 	std::cout << "AAnimal assignment operator called" << std::endl;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

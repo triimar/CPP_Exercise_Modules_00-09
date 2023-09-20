@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 21:47:59 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/19 16:55:59 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:21:53 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 class AMateria
 {
 private:
-	AMateria(); //defaut constructor should not be used
+	AMateria(); //defaut constructor should not be used / called outsde class & children
+
 protected:
 	std::string	_type;
 	
@@ -31,6 +32,7 @@ public:
 	AMateria& operator=(const AMateria& rhs);
 
 	std::string const & getType() const;
+
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 };

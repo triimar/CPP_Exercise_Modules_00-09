@@ -29,5 +29,4 @@ public:
 	virtual void	makeSound() const = 0;
 };
 
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:42 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 20:19:34 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:05:47 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int main() {
 	delete a;
 	delete b;
 	std::cout << "---------------------------------------------------" << std::endl;
-	system("leaks brained_animals");
+	// system("leaks brained_animals");
 	
 	return 0;	
 }

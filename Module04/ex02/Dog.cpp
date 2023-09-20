@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:39 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 21:16:34 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/20 19:16:29 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ Dog::Dog(const Dog& rhs) {
 
 Dog& Dog::operator=(const Dog& rhs) {
 	std::cout << "Dog copy assignment operator called" << std::endl;
-	this->type = rhs.type;
-	*this->_brain = *rhs._brain;
+	if ( this != &rhs) {
+		this->type = rhs.type;
+		*this->_brain = *rhs._brain;
+	}
 	return *this;
 }
 

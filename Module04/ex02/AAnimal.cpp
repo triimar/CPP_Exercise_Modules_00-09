@@ -13,7 +13,7 @@
 #include "AAnimal.hpp"
 
 AAnimal::AAnimal() : type("Unspecified creature") {
-	std::cout << "AAnimal instance constructed" << std::endl;
+	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
 AAnimal::~AAnimal() {

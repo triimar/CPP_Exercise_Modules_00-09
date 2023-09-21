@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:49 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 20:15:43 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/21 18:55:55 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ public:
 	Cat(const Cat& rhs);
 	Cat& operator=(const Cat& rhs);
 	
-	virtual void			makeSound() const;
-	void					setIdea(int i, std::string idea);
-	std::string 			getIdea(int i) const;
+	virtual void	makeSound() const;
+	void			setIdea(int i, std::string idea);
+	std::string 	getIdea(int i) const;
 };
 
 #endif

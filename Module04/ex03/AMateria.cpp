@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 21:48:02 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/20 18:35:29 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/21 19:59:34 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ std::string const& AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
-	std::cout << "Amateria is not material and has no effect whatsoever" << std::endl;
+	std::cout << "Amateria is not material and has no effect whatsoever on " << target.getName() << std::endl;
 }

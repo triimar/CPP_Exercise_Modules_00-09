@@ -6,16 +6,15 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:39 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/20 19:16:29 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/21 19:44:37 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : AAnimal() {
+Dog::Dog() : AAnimal(), _brain(new Brain()) {
 	std::cout << "Dog default constructor called" << std::endl;
 	this->type = "Dog";
-	_brain = new Brain();
 }
 
 Dog::~Dog() {
@@ -23,9 +22,8 @@ Dog::~Dog() {
 	delete _brain;
 }
 
-Dog::Dog(const Dog& rhs) {
+Dog::Dog(const Dog& rhs): AAnimal(rhs), _brain(new Brain(*(rhs._brain))) {
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = rhs;	
 }
 
 Dog& Dog::operator=(const Dog& rhs) {
@@ -42,12 +40,9 @@ void	Dog::makeSound() const {
 }
 
 void	Dog::setIdea(int i, std::string idea) {
-	if (i >= 0 && i < 100)
-		this->_brain->ideas[i] = idea;
+	this->_brain->setIdea(i, idea);
 }
 
 std::string Dog::getIdea(int i) const {
-	if (i >= 0 && i < 100)
-		return this->_brain->ideas[i];
-	return "";
+	return this->_brain->getIdea(i);
 }

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 19:08:49 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 17:22:24 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/17 20:24:09 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,20 @@
 
 ClapTrap::ClapTrap() :
 	_hitPoints(10), _energyPoints(10), _attackDamage(0) {
-
 	std::cout << "Default ClapTrap has been constructed." << std::endl;
 }
 	
 ClapTrap::ClapTrap(std::string name): 
 	_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)  {
-
 	std::cout << "ClapTrap " << _name << " has been constructed." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap & rhs) {
-
 	std::cout << "Copy constructor called." << std::endl;
 	*this = rhs;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
-
 	this->_name = rhs._name;
 	this->_hitPoints = rhs._hitPoints;
 	this->_hitPoints = rhs._energyPoints;
@@ -41,12 +37,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 }
 
 ClapTrap::~ClapTrap() {
-	
 	std::cout << "ClapTrap " << _name << " has been destroyed!" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target) {
-	
 	if (_hitPoints == 0) {
 		std::cout << "ClapTrap " << _name 
 			<< " has not enough hit points to attac" << target << "." << std::endl;
@@ -87,7 +81,6 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	
 	if (_hitPoints == 0) {
 		std::cout << "ClapTrap " << _name 
 		<< "'s damage is beyond repair." << std::endl;

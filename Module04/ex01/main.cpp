@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:42 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/20 19:05:47 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/21 19:46:56 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 #include <iostream>
 
 int main() {
+	Dog basic;
+	{
+	Dog tmp = basic;
+	}
 	///////////////////////////////////////////////
 	//GENERAL TEST + CONSTRUCTOR/DESTRUCTOR ORDER//
 	std::cout << "---------------------------------------------------" << std::endl;
@@ -49,7 +53,7 @@ int main() {
 	//////////////////////////////////////
 	//TESTING IF DEEP COPY IS CREATED/////
 	std::cout << "---------------------------------------------------" << std::endl;
-	Cat* a = new Cat();
+	Cat * a = new Cat();
 	for (size_t i = 0; i < 100; i++) {
 		a->setIdea(i, "FOOD");
 	}
@@ -60,8 +64,7 @@ int main() {
 			std::cout << std::endl;
 	}
 	std::cout << std::endl;
-	Cat* b = new Cat;
-	*b = *a;
+	Cat* b = new Cat(*a);
 	std::cout << std::endl << ">> CopyCat b's ideas:" << std::endl;
 	for (size_t i = 0; i < 100; i++) {
 		std::cout << b->getIdea(i) << " ";

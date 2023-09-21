@@ -6,10 +6,11 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:39:52 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:26:35 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/17 14:46:20 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void)

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:34:42 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/17 21:24:56 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/09/21 19:57:09 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ int main() {
 	std::cout << std::endl;
 	delete j;
 	delete i;
-	
+	std::cout << std::endl;
+	// added purely virtual functions allow to use setidea(), getidea() with AAnimal pointer.
+	AAnimal * a = new Dog();
+	for (size_t i = 0; i < 100; i++) {
+		a->setIdea(i, "SQUIRREL!");
+	}
+	std::cout << std::endl << ">> Dogs ideas:" << std::endl;
+	for (size_t i = 0; i < 100; i++) {
+		std::cout << a->getIdea(i) << " ";
+		if (i == 99)
+			std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	delete a;
 	return 0;	
 }

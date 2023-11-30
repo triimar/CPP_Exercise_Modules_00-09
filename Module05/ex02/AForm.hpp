@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:29:19 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/25 19:04:29 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/11/30 18:18:40 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,48 @@
 #define FORM_HPP
 
 # include <iostream>
+# include "Bureaucrat.hpp"
+
+class	Bureaucrat;
 
 class	AForm {
+
 
 private:
 	std::string const	_name;
 	bool				_isSigned;
-	unsigned int const	_signGrade;
-	unsigned int const	_executeGrade;
+	int const			_signGrade;
+	int const			_executeGrade;
 	
 	AForm& operator=(const AForm& rhs);
+	AForm();
+
+protected:
+	void	isExecutable(Bureaucrat const& executor) const;
 
 public:
-	AForm();
-	AForm(std::string name, unsigned int signGrade, unsigned int executeGrade);
+	AForm(std::string name, int signGrade, int executeGrade);
 	AForm(const AForm& rhs);
 	virtual ~AForm();
 	
 	std::string		getName() const;
-	unsigned int	getSignGrade() const;
-	unsigned int	getExecuteGrade() const;
+	int				getSignGrade() const;
+	int				getExecuteGrade() const;
 	bool			getSignedStatus() const;
 	
-	virtual void	beSigned(const Bureaucrat brc);
+	void			beSigned(Bureaucrat const& brc);
+	virtual void	execute(Bureaucrat const& executor) const = 0;
+	
+	class FormIsSignedException : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+
+	class FormNotSignedException : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+
 	class GradeTooHighException : public std::exception {
 		public:
 			virtual const char* what() const throw();
@@ -46,6 +65,7 @@ public:
 		public:
 			virtual const char* what() const throw();
 	};
+
 };
 
 std::ostream & operator<<(std::ostream & out, const AForm& rhs);

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:32:45 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/26 21:24:44 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/11/30 17:49:18 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,6 @@ void	Bureaucrat::decrementGrade() {
 }
 
 void	Bureaucrat::signForm(Form &form) const {
-	if (form.getSignedStatus() == true)
-	{
-		std::cerr << this->_name << " could not sign the " << form.getName() \
-		<< ". Reason: Form has been signed already." << std::endl;
-		return ;
-	}
-		
 	try
 	{
 		form.beSigned(*this);
@@ -75,7 +68,7 @@ void	Bureaucrat::signForm(Form &form) const {
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->_name << " could not sign the form" << form.getName() \
+		std::cerr << this->_name << " could not sign the form " << form.getName() \
 		<< ". Reason: " << e.what() << std::endl;
 	}
 }

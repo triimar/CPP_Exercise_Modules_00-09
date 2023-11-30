@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:29:19 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/26 20:53:12 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/11/30 18:11:13 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	int				getSignGrade() const;
 	int				getExecuteGrade() const;
 	bool			getSignedStatus() const;
-	void			beSigned(const Bureaucrat brc);
+	void			beSigned(const Bureaucrat& brc);
 	
 	class GradeTooHighException : public std::exception {
 		public:
@@ -46,6 +46,11 @@ public:
 	};
 	
 	class GradeTooLowException : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+
+	class FormIsSignedException : public std::exception {
 		public:
 			virtual const char* what() const throw();
 	};

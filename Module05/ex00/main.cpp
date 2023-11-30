@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:32:48 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/26 19:30:43 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/11/29 17:35:12 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main() {
 	// std::cout << *dude;
 	// std::cout << bro;
 	// delete dude;
-	std::cout << "--------------INCREMENT-DECREMENT---------------------" << std::endl;
+	std::cout << "--------------INCREMENT-DECREMENT--EXCEPTIONS--------" << std::endl;
 	try
 	{
 		One.decrementGrade();
@@ -46,16 +46,16 @@ int main() {
 		while (Two.getGrade() >= 0)
 			Two.incrementGrade();
 	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{	
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}	
-	catch (const Bureaucrat::GradeTooHighException &e)
+	catch (const Bureaucrat::GradeTooHighException& e)
 	{	
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 	std::cout << Two;
-	std::cout << "---------------------INSTANTIATING--------------------" << std::endl;
+	std::cout << "---------INSTANTIATING--EXCEPTIONS--------------------" << std::endl;
 	try
 	{
 		Bureaucrat Four("Harold", 5);

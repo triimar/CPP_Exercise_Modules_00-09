@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:32:04 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/30 21:16:40 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/02 17:07:31 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const {
 	this->isExecutable(executor);
-	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	
+	std::cout << "\\(^O^)/ " << _target << " has been pardoned by Zaphod Beeblebrox. " << "\\(^O^)/"<< std::endl;
 }

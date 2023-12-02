@@ -6,15 +6,15 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/20 16:29:48 by tmarts            #+#    #+#              #
-#    Updated: 2023/11/30 21:10:09 by tmarts           ###   ########.fr        #
+#    Updated: 2023/12/02 17:50:19 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= bureau02
 CPP			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
-SRC			= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
-INC			= Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
+SRC			= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+INC			= Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

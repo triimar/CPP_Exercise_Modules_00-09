@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:27:28 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/30 20:30:29 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/02 17:36:07 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,5 @@ public:
 
 	virtual void	execute(const Bureaucrat &executor) const;
 };
-
-// ShrubberyCreationForm: Required grades: sign 145, exec 137
-// Create a file <target>_shrubbery in the working directory, and writes ASCII trees
-// inside it.
 
 #endif

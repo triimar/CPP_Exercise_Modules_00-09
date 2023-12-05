@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 18:49:31 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/05 22:54:57 by tmarts           ###   ########.fr       */
+/*   Created: 2023/12/05 20:48:28 by tmarts            #+#    #+#             */
+/*   Updated: 2023/12/05 22:55:32 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
-
-#define UNPRINTABLES 
 #include <iostream>
-#include "ScalarParser.hpp"
+#include "ScalarConverter.hpp"
 
-class ScalarConverter
+int	main(int argc, char **argv)
 {
-private:
-	ScalarConverter();
-	~ScalarConverter();
-	ScalarConverter(const ScalarConverter& rhs);
-	ScalarConverter& operator=(const ScalarConverter& rhs);
-public:
-	static void convert(const std::string& literal);
-};
+	if (argc != 2)
+	{
+		std::cerr << "Intput error! Single argument expected." << std::endl;
+		return EXIT_FAILURE;
+	}
+	try
+	{
+		std::string input = argv[1];
+		ScalarConverter::convert(input);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+	
 
-#endif
+}

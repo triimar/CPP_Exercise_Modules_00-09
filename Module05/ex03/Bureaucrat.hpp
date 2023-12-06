@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:32:52 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/30 21:26:59 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:21:38 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <exception>
+
 # include "AForm.hpp"
 
 class	AForm;
@@ -22,23 +24,25 @@ class	AForm;
 class	Bureaucrat {
 
 private:
-	std::string const	_name;
-	int					_grade;		
+	std::string const	name_;
+	int					grade_;		
 	
 	Bureaucrat& operator=(const Bureaucrat& rhs);
 
 public:
 	Bureaucrat();
-	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const std::string& name, int grade);
 	Bureaucrat(const Bureaucrat& rhs);
 	~Bureaucrat();
 	
-	std::string 	getName() const;
-	int				getGrade() const;
-	void			incrementGrade();
-	void			decrementGrade();
-	void			signForm(AForm& form) const;
-	void			executeForm(AForm const & form) const;
+	const std::string& 	getName() const;
+	int					getGrade() const;
+	
+	void				incrementGrade();
+	void				decrementGrade();
+	
+	void				signForm(AForm& form) const;
+	void				executeForm(AForm const & form) const;
 	
 	class GradeTooHighException : public std::exception {
 		public:

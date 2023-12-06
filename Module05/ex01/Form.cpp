@@ -6,30 +6,30 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:29:17 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/30 18:10:58 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 14:55:17 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("Standard form"), _isSigned(false), _signGrade(1), _executeGrade(1) {
+Form::Form() : name_("Standard form"), isSigned_(false), signGrade_(1), executeGrade_(1) {
 	
 }
 
-Form::Form(std::string name, int signGrade, int executeGrade) : \
-		_name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(executeGrade) {
-	if (_signGrade > 150 || _executeGrade > 150)
+Form::Form(const std::string& name, int signGrade, int executeGrade) : \
+		name_(name), isSigned_(false), signGrade_(signGrade), executeGrade_(executeGrade) {
+	if (signGrade_ > 150 || executeGrade_ > 150)
 		throw GradeTooLowException();
-	else if (_signGrade < 1 || _executeGrade < 1)
+	else if (signGrade_ < 1 || executeGrade_ < 1)
 		throw GradeTooHighException();
 }
 
 Form::Form(const Form& rhs) : \
-		_name(rhs._name), _isSigned(false), _signGrade(rhs._signGrade), _executeGrade(rhs._executeGrade) {
+		name_(rhs.name_), isSigned_(false), signGrade_(rhs.signGrade_), executeGrade_(rhs.executeGrade_) {
 }
 
 Form& Form::operator=(const Form& rhs) {
-	this->_isSigned = rhs._isSigned;
+	this->isSigned_ = rhs.isSigned_;
 	return *this;
 }
 
@@ -37,26 +37,26 @@ Form::~Form() {
 	
 }
 
-std::string	Form::getName() const {
-	return this->_name;
+const std::string&	Form::getName() const {
+	return this->name_;
 }
 
 int	Form::getSignGrade() const {
-	return this->_signGrade;
+	return this->signGrade_;
 }
 
 int	Form::getExecuteGrade() const {
-	return	this->_executeGrade;
+	return	this->executeGrade_;
 }
 
 bool	Form::getSignedStatus() const {
-	return this->_isSigned;
+	return this->isSigned_;
 }
 
 void	Form::beSigned(const Bureaucrat& brc) {
-	if (this->_signGrade >= brc.getGrade() && _isSigned != true)
-		_isSigned = true;
-	else if (_isSigned == true)
+	if (this->signGrade_ >= brc.getGrade() && isSigned_ != true)
+		isSigned_ = true;
+	else if (isSigned_ == true)
 		throw FormIsSignedException();
 	else
 		throw GradeTooLowException();

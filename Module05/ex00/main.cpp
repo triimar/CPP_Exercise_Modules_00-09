@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:32:48 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/29 17:35:12 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 14:30:14 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ int main() {
 	Bureaucrat Two = One;
 	std::cout << One;
 	std::cout << Two;
-	// std::cout << "---------------------------------------------------" << std::endl;
-	// Bureaucrat *dude = new Bureaucrat("Joe", 2);
-	// Bureaucrat bro(*dude);
-	// std::cout << *dude;
-	// std::cout << bro;
-	// delete dude;
 	std::cout << "--------------INCREMENT-DECREMENT--EXCEPTIONS--------" << std::endl;
 	try
 	{
@@ -59,27 +53,33 @@ int main() {
 	try
 	{
 		Bureaucrat Four("Harold", 5);
+		std::cout << Four;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "Caught exception: " << e.what() << std::endl;	
 	}
+	std::cout << std::endl;
 	try
 	{
 		Bureaucrat Five("Donald", 255);
+		std::cout << Five;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 	try
 	{
 		Bureaucrat Six("Johannes", -45);
+		std::cout << Six;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 	// std::cout << "---------------------CAUSING AN ERROR--------------------" << std::endl;
 	// try
 	// {

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:32:00 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:19:20 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:49:55 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main() {
 	std::cout << "--------------------------------------------------" << std::endl;
 	try
 	{
-		form = invisibleCod.makeForm("shrubbery creation", "");
+		form = invisibleCod.makeForm("shrubbery creation", "42");
 		std::cout << *form;
 		guy.signForm(*form);
 		dude->executeForm(*form);

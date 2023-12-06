@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:28:31 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:13:31 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:34:41 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 
 class RobotomyRequestForm : public AForm {
 private:
-	std::string	_target;
+	std::string	target_;
 
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
 	RobotomyRequestForm();
 	
 public:
-	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(const std::string& target);
 	RobotomyRequestForm(const RobotomyRequestForm& rhs);
 	virtual	~RobotomyRequestForm();
 
-	virtual void	execute(const Bureaucrat &executor) const;
+	virtual void	execute(const Bureaucrat& executor) const;
 
 	class InvalidArgumentException : public std::exception {
 		public:

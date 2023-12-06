@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:27:28 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:13:46 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:35:18 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 
 class ShrubberyCreationForm : public AForm {
 private:
-	std::string	_target;
+	std::string	target_;
 	
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
 	ShrubberyCreationForm();
 	
 public:
-	ShrubberyCreationForm(std::string target);
+	ShrubberyCreationForm(const std::string& target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& rhs);
 	virtual	~ShrubberyCreationForm();
 
-	virtual void	execute(const Bureaucrat &executor) const;
+	virtual void	execute(const Bureaucrat& executor) const;
 	
 	class InvalidArgumentException : public std::exception {
 		public:

@@ -6,30 +6,30 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:31:56 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:08:13 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:33:09 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("Standard form"), _isSigned(false), _signGrade(1), _executeGrade(1) {
+AForm::AForm() : name_("Standard form"), isSigned_(false), signGrade_(1), executeGrade_(1) {
 	
 }
 
-AForm::AForm(std::string name, int signGrade, int executeGrade) : \
-		_name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(executeGrade) {
-	if (_signGrade > 150 || _executeGrade > 150)
+AForm::AForm(const std::string& name, int signGrade, int executeGrade) : \
+		name_(name), isSigned_(false), signGrade_(signGrade), executeGrade_(executeGrade) {
+	if (signGrade_ > 150 || executeGrade_ > 150)
 		throw GradeTooLowException();
-	else if (_signGrade < 1 || _executeGrade < 1)
+	else if (signGrade_ < 1 || executeGrade_ < 1)
 		throw GradeTooHighException();
 }
 
 AForm::AForm(const AForm& rhs) : \
-		_name(rhs._name), _isSigned(false), _signGrade(rhs._signGrade), _executeGrade(rhs._executeGrade) {
+		name_(rhs.name_), isSigned_(false), signGrade_(rhs.signGrade_), executeGrade_(rhs.executeGrade_) {
 }
 
 AForm& AForm::operator=(const AForm& rhs) {
-	this->_isSigned = rhs._isSigned;
+	this->isSigned_ = rhs.isSigned_;
 	return *this;
 }
 
@@ -37,35 +37,35 @@ AForm::~AForm() {
 	
 }
 
-std::string	AForm::getName() const {
-	return this->_name;
+const std::string&	AForm::getName() const {
+	return this->name_;
 }
 
 int	AForm::getSignGrade() const {
-	return this->_signGrade;
+	return this->signGrade_;
 }
 
 int	AForm::getExecuteGrade() const {
-	return	this->_executeGrade;
+	return	this->executeGrade_;
 }
 
 bool	AForm::getSignedStatus() const {
-	return this->_isSigned;
+	return this->isSigned_;
 }
 
-void	AForm::beSigned(Bureaucrat const& brc) {
-	if (this->_signGrade >= brc.getGrade() && this->_isSigned != true)
-		_isSigned = true;
-	else if (_isSigned == true)
+void	AForm::beSigned(const Bureaucrat& brc) {
+	if (this->signGrade_ >= brc.getGrade() && this->isSigned_ != true)
+		isSigned_ = true;
+	else if (isSigned_ == true)
 		throw FormIsSignedException();
 	else
 		throw GradeTooLowException();
 }
 
-void	AForm::isExecutable(Bureaucrat const & executor) const {
-	if (this->_isSigned == false)
+void	AForm::isExecutable(const Bureaucrat& executor) const {
+	if (this->isSigned_ == false)
 		throw FormNotSignedException();
-	else if (this->_executeGrade < executor.getGrade())
+	else if (this->executeGrade_ < executor.getGrade())
 		throw GradeTooLowException();
 }
 

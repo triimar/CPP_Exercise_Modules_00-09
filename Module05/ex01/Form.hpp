@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:29:19 by tmarts            #+#    #+#             */
-/*   Updated: 2023/11/30 18:11:13 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:15:26 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FORM_HPP
 
 # include <iostream>
+# include <exception>
 # include "Bureaucrat.hpp"
 
 class	Bureaucrat;
@@ -21,24 +22,25 @@ class	Bureaucrat;
 class	Form {
 
 private:
-	std::string const	_name;
-	bool				_isSigned;
-	int const			_signGrade;
-	int const			_executeGrade;
+	const std::string	name_;
+	bool				isSigned_;
+	const int			signGrade_;
+	const int			executeGrade_;
 	
 	Form& operator=(const Form& rhs);
 
 public:
 	Form();
-	Form(std::string name, int signGrade, int executeGrade);
+	Form(const std::string& name, int signGrade, int executeGrade);
 	Form(const Form& rhs);
 	~Form();
 	
-	std::string		getName() const;
-	int				getSignGrade() const;
-	int				getExecuteGrade() const;
-	bool			getSignedStatus() const;
-	void			beSigned(const Bureaucrat& brc);
+	const std::string&	getName() const;
+	int					getSignGrade() const;
+	int					getExecuteGrade() const;
+	bool				getSignedStatus() const;
+	
+	void				beSigned(const Bureaucrat& brc);
 	
 	class GradeTooHighException : public std::exception {
 		public:

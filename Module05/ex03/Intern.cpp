@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:58:54 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:11:46 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:48:37 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,15 @@ Intern::~Intern() {
 	
 }
 
-Intern::Intern(const Intern& rhs) {
-	(void)rhs;
+Intern::Intern(const Intern&) {
 }
 
-Intern& 	Intern::operator=(const Intern& rhs) {
-	if (this != &rhs)
-		(void)rhs;
+Intern& 	Intern::operator=(const Intern&) {
 	return *this;
 }
 
-AForm* Intern::makeForm(std::string formName, std::string target) {
-	std::string Forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+AForm* Intern::makeForm(const std::string& formName, const std::string& target) {
+	const std::string Forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
 	int		formIndex;
 	AForm	*newForm = NULL;
 	

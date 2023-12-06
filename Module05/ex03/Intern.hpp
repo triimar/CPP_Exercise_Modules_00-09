@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:59:17 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/04 17:13:15 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:46:14 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Intern& operator=(const Intern& rhs);
 	~Intern();
 	
-	AForm* makeForm(std::string formName, std::string target);
+	AForm* makeForm(const std::string& formName, const std::string& target);
 	
 	class NoSuchFormException : public std::exception {
 		public:

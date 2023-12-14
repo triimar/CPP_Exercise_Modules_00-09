@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 21:41:01 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/05 22:53:57 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/14 20:02:42 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ enum eLiteralType {
 	CHAR,
 	INT,
 	FLOAT,
-	DOUBLE,
-	PESEUDO
+	DOUBLE
 };
 
 class ScalarParser {
@@ -37,7 +36,7 @@ public:
 	class InvalidInputException : public std::exception {
 		public:
 			virtual const char* what() const throw();
-};
+	};
 
 };
 

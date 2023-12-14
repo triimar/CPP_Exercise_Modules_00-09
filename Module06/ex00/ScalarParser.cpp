@@ -6,11 +6,12 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 21:40:02 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/05 23:09:52 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/14 20:48:21 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarParser.hpp"
+#include <sstream>
 
 ScalarParser::ScalarParser() {
 }
@@ -29,10 +30,31 @@ ScalarParser& ScalarParser::operator=(const ScalarParser& ) {
 eLiteralType ScalarParser::getType(const std::string& literal) {
 	if (literal.empty())
 		throw InvalidInputException();
-	if (literal.length() == 1 && !isdigit(literal[0]))
+	std::istringstream intStream(literal);
+	int intVal;
+	intStream >> intVal;
+	if (!intStream.fail() && intStream.eof())
+		return INT;
+	if (literal.length() == 1)
 		return CHAR;
-	return INT;
-	
+	if (literal[literal.length() - 1] == 'f' && literal != "-inf" && literal != "+inf")
+	{
+		std::string modifiedStr = literal.substr(0, literal.length() - 1);
+		std::istringstream floatStream(modifiedStr);
+		float floatVal;
+		floatStream >> floatVal;
+		if (!floatStream.fail() && floatStream.eof())
+			return FLOAT;
+		else
+			throw InvalidInputException();
+	}
+	std::istringstream doubleStream(literal);
+	double doubleVal;
+	doubleStream >> doubleVal;
+	if (!doubleStream.fail() && doubleStream.eof())
+		return DOUBLE;
+	else
+		throw InvalidInputException();
 }
 
 

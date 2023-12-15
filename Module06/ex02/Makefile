@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/20 16:29:48 by tmarts            #+#    #+#              #
-#    Updated: 2023/12/15 17:08:36 by tmarts           ###   ########.fr        #
+#    Created: 2023/12/15 19:30:48 by tmarts            #+#    #+#              #
+#    Updated: 2023/12/15 19:31:30 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= ScalarConverter
+NAME		= Typer
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
-SRC			= main.cpp ScalarConverter.cpp ScalarParser.cpp
-INC			= ScalarConverter.hpp ScalarParser.hpp
+SRC			= main.cpp Base.cpp
+INC			= Base.hpp A.hpp B.hpp C.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

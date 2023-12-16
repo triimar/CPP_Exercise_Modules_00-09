@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 19:21:26 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/15 20:40:53 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/16 19:10:36 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ Base* generate(void) {
 		return new C;
 	}
 }
-// It randomly instanciates A, B or C and returns the instance as a Base pointer. Feel free
-// to use anything you like for the random choice implementation.
+
+//when the cast is impossible and conversion fails - the dynmic_cast returns NULL
 void identify(Base* p) {
 	if (dynamic_cast<A *>(p))
 		std::cout << "The actual type of the object pointed to is A" << std::endl;
@@ -48,42 +48,44 @@ void identify(Base* p) {
 	else
 		std::cout << "Error! Failed to identify the type of the object" << std::endl;
 }
-// It prints the actual type of the object pointed to by p: "A", "B" or "C".
+
+//reference by definition cannot return a NULL pointer, 
+//so instead exception gets thrown if dynamic cast fails.
 void identify(Base& p) {
 	try
 	{
-		(void)dynamic_cast<A &>(p);
+		A& pt = dynamic_cast<A &>(p);
+		(void)pt;
 		std::cout << "The actual type of the object referenced is A" << std::endl;
 	}
 	catch(const std::bad_cast& e)
 	{
 		try
 		{
-			(void)dynamic_cast<B &>(p);
+			B& pt = dynamic_cast<B &>(p);
+			(void)pt;
 			std::cout << "The actual type of the object referenced is B" << std::endl;
 		}
 		catch(const std::bad_cast& e)
 		{
 			try
 			{
-				(void)dynamic_cast<C &>(p);
+				C& pt = dynamic_cast<C &>(p);
+				(void)pt;
 				std::cout << "The actual type of the object referenced to is C" << std::endl;
 			}
 			catch(const std::bad_cast& e)
 			{
 				std::cerr << e.what() << std::endl;
 			}
-			
 		}
-		
 	}
 }
-// It prints the actual type of the object pointed to by p: "A", "B" or "C". Using a pointer
-// inside this function is forbidden.
+
 int main()
 {
-	Base* one = generate();
-	identify(one);
-	identify(*one);
-	delete one;
+	Base* p = generate();
+	identify(p);
+	identify(*p);
+	delete p;
 }

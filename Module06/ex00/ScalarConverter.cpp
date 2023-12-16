@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:49:05 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/14 21:03:05 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/16 20:30:22 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ void ScalarConverter::convertInt(const std::string& literal) {
 	std::istringstream intStream(literal);
 	int i;
 	intStream >> i;
+	if (intStream.fail())
+	{
+		std::cerr << "Error! Input conversion failed" << std::endl;
+		return ;
+	}
 	if (i >= std::numeric_limits<char>::min() && i <= std::numeric_limits<char>::max())
 	{
 		if (i < 32 || i == 127)
@@ -60,6 +65,11 @@ void ScalarConverter::convertFloat(const std::string& literal) {
 	std::istringstream floatStream(str);
 	float f;
 	floatStream >> f;
+	if (floatStream.fail())
+	{
+		std::cerr << "Error! Input conversion failed" << std::endl;
+		return ;
+	}
 	if (f >= std::numeric_limits<char>::min() && f <= std::numeric_limits<char>::max())
 	{
 		if (f < 32 || f == 127)
@@ -73,6 +83,7 @@ void ScalarConverter::convertFloat(const std::string& literal) {
 		std::cout << "int: " << static_cast<int>(f) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
+	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "float: " << f << "f" << std::endl \
 			<< "double: " << static_cast<double>(f) << std::endl;
 }
@@ -81,6 +92,11 @@ void ScalarConverter::convertDouble(const std::string& literal) {
 	std::istringstream doubleStream(literal);
 	double d;
 	doubleStream >> d;
+		if (doubleStream.fail())
+	{
+		std::cerr << "Error! Input conversion failed" << std::endl;
+		return ;
+	}
 	if (d >= std::numeric_limits<char>::min() && d <= std::numeric_limits<char>::max())
 	{
 		if (d < 32 || d == 127)
@@ -94,7 +110,8 @@ void ScalarConverter::convertDouble(const std::string& literal) {
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
-	if (literal != "-inf" && literal != "+inf" && (d > std::numeric_limits<float>::max() || d < std::numeric_limits<float>::min()))
+	std::cout << std::fixed << std::setprecision(1);
+	if (literal != "-inf" && literal != "+inf" && (d > std::numeric_limits<float>::max() || d < -std::numeric_limits<float>::max()))
 		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;

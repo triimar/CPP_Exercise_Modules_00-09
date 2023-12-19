@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 21:58:21 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/18 20:56:35 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/19 17:32:34 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ public:
 
 	T&	operator[](const unsigned int n) const;
 	unsigned int size() const;
-	void	printArray() const;
 	
 	class IndexOutOfBounds : public std::exception {
 		public:
 			virtual const char* what() const throw();
 	};
 };
+
+#include "Array.tpp"
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:52:28 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/18 21:02:47 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/19 17:34:48 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+#ifndef ARRAY_TPP
+#define ARRAY_TPP
 
 template <typename T>
 Array<T>::Array(): size_(0), array_(NULL) {
@@ -49,6 +50,7 @@ Array<T>::Array(const Array& rhs): size_(rhs.size_) {
 
 template <typename T>
 Array<T>& Array<T>::operator=(const Array& rhs) {
+	std::cout << "copy assignment operator" << std::endl;
 	if (this != &rhs)
 	{
 		size_ = rhs.size_;
@@ -84,12 +86,15 @@ const char* Array<T>::IndexOutOfBounds::what() const throw() {
 	return "Index is out of bounds";
 }
 
+
 template <typename T>
-void	Array<T>::printArray() const {
-	if (array_ != NULL)
+std::ostream& operator<<(std::ostream& o, const Array<T>& array) {
+	if (array.size() != 0)
 	{
-		for (unsigned int i = 0; i < size_; i++)
-			std::cout << "|" << array_[i] << "| ";
+		for (unsigned int i = 0; i < array.size(); i++)
+			std::cout << "|" << array[i] << "| ";
 	}
-	std::cout << std::endl;
+	return o;
 }
+
+#endif

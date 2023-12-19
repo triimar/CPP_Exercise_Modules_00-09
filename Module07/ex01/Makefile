@@ -6,13 +6,13 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 21:54:17 by tmarts            #+#    #+#              #
-#    Updated: 2023/12/16 21:54:41 by tmarts           ###   ########.fr        #
+#    Updated: 2023/12/19 17:46:42 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= iter
 CPP			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 SRC			= main.cpp
 INC			= iter.hpp
 OBJ_DIR		= obj

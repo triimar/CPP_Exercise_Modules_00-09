@@ -6,7 +6,7 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/19 19:42:33 by tmarts            #+#    #+#              #
-#    Updated: 2023/12/19 19:43:10 by tmarts           ###   ########.fr        #
+#    Updated: 2023/12/21 19:06:27 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= easyfind
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
 SRC			= main.cpp
-INC			= easyfind.hpp easyfind.tpp
+INC			= easyfind.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

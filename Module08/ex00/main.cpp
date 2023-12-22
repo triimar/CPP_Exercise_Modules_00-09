@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:43:15 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/21 21:27:42 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/23 00:05:51 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include <list>
 #include <deque>
 #include <iostream>
+#include <ctime> //for std::time
+#include <cstdlib> //for std::rand()
+
 
 int main(void)
 {

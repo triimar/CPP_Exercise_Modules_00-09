@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:55:29 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/23 00:08:35 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/23 16:05:17 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()	{
 	smutant.push("is");
 	smutant.push("MutantStack<std::string>!");
 	smutant.push("Fancy!");
-	std::cout << "Made a MutantStack of strings. using reverse_iterator to print it:" << std::endl;
+	std::cout << "Made a MutantStack of strings. Using reverse_iterator to print it:" << std::endl;
 	for (MutantStack<std::string>::const_reverse_iterator it = smutant.crbegin(); it != smutant.crend(); ++it)
 		std::cout << *it << " "; 
 	std::cout << std::endl;

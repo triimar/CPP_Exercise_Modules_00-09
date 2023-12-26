@@ -6,15 +6,15 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/23 16:06:07 by tmarts            #+#    #+#              #
-#    Updated: 2023/12/23 16:06:48 by tmarts           ###   ########.fr        #
+#    Updated: 2023/12/26 14:41:47 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= btc
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
-SRC			= main.cpp BitcoinExchange.cpp
-INC			= BitcoinExchange.hpp
+SRC			= main.cpp BitcoinExchange.cpp date_utils.cpp
+INC			= BitcoinExchange.hpp date_utils.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

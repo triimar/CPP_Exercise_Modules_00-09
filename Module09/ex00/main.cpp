@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:08:46 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/23 21:58:53 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/26 19:37:08 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int main(int argc, char **argv) {
 	catch(const std::exception& e) {
 		std::cerr << "Error: " << e.what() << '\n';
 	}
-	
-	return 0;
+	return EXIT_SUCCESS;
 }

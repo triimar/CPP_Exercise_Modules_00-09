@@ -6,15 +6,15 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/23 16:16:29 by tmarts            #+#    #+#              #
-#    Updated: 2023/12/23 16:16:58 by tmarts           ###   ########.fr        #
+#    Updated: 2023/12/28 18:10:14 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= PmergeMe
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
-SRC			= main.cpp PmergeMe.cpp
-INC			= PmergeMe.hpp
+SRC			= PmergeMe.cpp PmergeMeUtils.cpp main.cpp
+INC			= PmergeMe.hpp PmergeMeUtils.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 all : $(NAME)

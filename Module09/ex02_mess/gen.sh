@@ -14,7 +14,7 @@ shuffle_array() {
 }
 
 # Generate a list of arguments (positive integers from 1 to 10)
-args=({1..10000})
+args=({1..1000})
 
 # Shuffle the array of arguments
 shuffled_args=($(shuffle_array "${args[@]}"))

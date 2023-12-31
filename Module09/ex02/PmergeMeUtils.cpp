@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:15:15 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/31 05:38:26 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 09:51:29 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 bool PmergeMeUtils::inputIsValid(char **input)
 {
-	if (*input == NULL) {
+	if (*input == NULL || *(input + 1) == NULL) {
 		return false;
 	}
 	long int num;

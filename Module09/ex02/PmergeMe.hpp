@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:18:14 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/31 07:51:32 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:50:10 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@
 class PmergeMe
 {
 private:
+	PmergeMe();
+	~PmergeMe();
+	PmergeMe(const PmergeMe& rhs);
+	PmergeMe& operator=(const PmergeMe& rhs);
 	
 	template <typename T>
 	static size_t 	binarySearch(T& container, size_t start, size_t end, int target);
 	
 	static void		mergeVecPairs(std::vector<std::pair<int, int> >& paired);
-	static void		mergeDequePairs(std::deque<std::pair<int, int> >& paired)
+	static void		mergeDequePairs(std::deque<std::pair<int, int> >& paired);
 	
-;public:
-	PmergeMe();
-	~PmergeMe();
-	
+public:
 	template <typename T>
 	static void initiateUnsorted(T& empty, char **input);
 	

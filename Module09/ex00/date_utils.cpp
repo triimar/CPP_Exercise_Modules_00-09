@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:37:41 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/26 14:39:36 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:03:42 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ bool date_utils::is_valid_date(std::string date) {
 	}
 	return true;
 }
-		
+	
 	
 

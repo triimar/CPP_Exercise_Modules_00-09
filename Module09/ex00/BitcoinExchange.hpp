@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:47 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/27 16:01:41 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:09:32 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ private:
 	const BitcoinExchange& operator=(const BitcoinExchange& rhs);
 	BitcoinExchange();
 	
+	std::string& trimString(std::string& str);	
 	double	searchDatabase(const std::string& date) const;
 	void	returnValue(const std::string& date, const float& value) const;
 		

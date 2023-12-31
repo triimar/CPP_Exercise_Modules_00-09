@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:12:04 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/27 19:31:49 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:35:53 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(int argc, char *argv[])
 {
+	std::cout << argc << std::endl;
 	if (argc != 2) {
 		std::cout << "Error: invalid input. Single string argument expected." << std::endl;
 		return 1;

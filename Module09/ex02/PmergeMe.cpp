@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:17:59 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/31 07:56:21 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:54:04 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ PmergeMe::PmergeMe() {}
 
 PmergeMe::~PmergeMe() {}
 
+PmergeMe::PmergeMe(const PmergeMe& ) {}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& ) {return *this;}
 
 void PmergeMe::mergeVecPairs(std::vector<std::pair<int, int> >& paired) {
+	
 	size_t len = paired.size();
 	if (len <= 1) return;
 	size_t middle = len / 2;
@@ -27,10 +31,10 @@ void PmergeMe::mergeVecPairs(std::vector<std::pair<int, int> >& paired) {
 	std::vector<std::pair<int, int> > right;
 	for (std::size_t i = 0; i < len; i++) {
     if (i < middle)
-      left.push_back(paired[i]);
+    	left.push_back(paired[i]);
     else
-      right.push_back(paired[i]);
-	 }
+    	right.push_back(paired[i]);
+	}
 	PmergeMe::mergeVecPairs(left);
 	PmergeMe::mergeVecPairs(right);
 	size_t leftLen = left.size(), rightLen = right.size();
@@ -51,6 +55,7 @@ void PmergeMe::mergeVecPairs(std::vector<std::pair<int, int> >& paired) {
 
 
 void PmergeMe::sortVec(std::vector<int>& v) {
+	
 	size_t size = v.size();
 	int struggler = -1;
 	std::vector<std::pair<int, int> > paired;
@@ -85,11 +90,9 @@ void PmergeMe::sortVec(std::vector<int>& v) {
 	size_t inserts = 1;
 	while (posPend <= pendLen || pendLen == 2)
 	{
-		if (pendLen < JacNew) // When pend chain is bigger than the the new jacobsthal number
-		{
+		if (pendLen < JacNew) {// When pend chain is bigger than the the new jacobsthal number
 			posPend = JacPrev + 1;
-			while (posPend <= pendLen)
-			{
+			while (posPend <= pendLen) {
 				posMain = PmergeMe::binarySearch(v, 0, posPend + inserts, pend[posPend - 1]);
 				v.insert((v.begin() + posMain), pend[posPend - 1]);
 				inserts++;
@@ -97,12 +100,9 @@ void PmergeMe::sortVec(std::vector<int>& v) {
 			}
 			break ;
 		}
-		else
-		{
+		else {
 			posPend = JacNew;
-			while (JacPrev < posPend)
-			{
-				std::cout << posPend << "+ ";
+			while (JacPrev < posPend) {
 				posMain = PmergeMe::binarySearch(v, 0, posPend + inserts, pend[posPend - 1]);
 				v.insert((v.begin() + posMain), pend[posPend - 1]);
 				inserts++;
@@ -113,16 +113,6 @@ void PmergeMe::sortVec(std::vector<int>& v) {
 			JacNew = JacNext;
 		}
 	}
-	/* printing */
-	for (std::vector<std::pair<int, int> >::iterator it = paired.begin(); it != paired.end(); ++it) {
-		std::cout << " | " << it->first << ";" << it->second; 
-	}
-	
-	printContainer(v);
-	printContainer(pend);
-	
-	std::cout << std::endl << "struggler: " << struggler << std::endl;
-
 }
 
 void PmergeMe::mergeDequePairs(std::deque<std::pair<int, int> >& paired) {
@@ -137,8 +127,8 @@ void PmergeMe::mergeDequePairs(std::deque<std::pair<int, int> >& paired) {
     else
       right.push_back(paired[i]);
 	 }
-	PmergeMe::mergeVecPairs(left);
-	PmergeMe::mergeVecPairs(right);
+	PmergeMe::mergeDequePairs(left);
+	PmergeMe::mergeDequePairs(right);
 	size_t leftLen = left.size(), rightLen = right.size();
   	size_t i = 0, j = 0;
 	paired.clear();
@@ -155,7 +145,7 @@ void PmergeMe::mergeDequePairs(std::deque<std::pair<int, int> >& paired) {
     	paired.push_back(right.at(j++));
 }
 
-void PmergeMe::sortDeque(std::Deque<int>& v) {
+void PmergeMe::sortDeque(std::deque<int>& v) {
 	size_t size = v.size();
 	int struggler = -1;
 	std::deque<std::pair<int, int> > paired;
@@ -170,7 +160,7 @@ void PmergeMe::sortDeque(std::Deque<int>& v) {
 			struggler = v[i];
 	}
 	v.clear();
-	PmergeMe::mergeVecPairs(paired);
+	PmergeMe::mergeDequePairs(paired);
 	/*separating pairs into two int arrays*/
 	std::deque<int> pend;
 	for (std::deque<std::pair<int, int> >::iterator it = paired.begin(); it != paired.end(); ++it) {
@@ -186,13 +176,11 @@ void PmergeMe::sortDeque(std::Deque<int>& v) {
 	size_t	posPend = JacNew, posMain;
 	size_t pendLen = pend.size();
 	size_t inserts = 1;
-	while (posPend <= pendLen || pendLen == 2)
-	{
-		if (pendLen < JacNew) // When pend chain is bigger than the the new jacobsthal number
-		{
+	while (posPend <= pendLen || pendLen == 2) {
+		if (pendLen < JacNew) {// When pend chain is bigger than the the new jacobsthal number
+		
 			posPend = JacPrev + 1;
-			while (posPend <= pendLen)
-			{
+			while (posPend <= pendLen) {
 				posMain = PmergeMe::binarySearch(v, 0, posPend + inserts, pend[posPend - 1]);
 				v.insert((v.begin() + posMain), pend[posPend - 1]);
 				inserts++;
@@ -200,12 +188,9 @@ void PmergeMe::sortDeque(std::Deque<int>& v) {
 			}
 			break ;
 		}
-		else
-		{
+		else {
 			posPend = JacNew;
-			while (JacPrev < posPend)
-			{
-				std::cout << posPend << "+ ";
+			while (JacPrev < posPend) {
 				posMain = PmergeMe::binarySearch(v, 0, posPend + inserts, pend[posPend - 1]);
 				v.insert((v.begin() + posMain), pend[posPend - 1]);
 				inserts++;
@@ -216,14 +201,4 @@ void PmergeMe::sortDeque(std::Deque<int>& v) {
 			JacNew = JacNext;
 		}
 	}
-	/* printing */
-	for (std::deque<std::pair<int, int> >::iterator it = paired.begin(); it != paired.end(); ++it) {
-		std::cout << " | " << it->first << ";" << it->second; 
-	}
-	
-	printContainer(v);
-	printContainer(pend);
-	
-	std::cout << std::endl << "struggler: " << struggler << std::endl;
-
 }

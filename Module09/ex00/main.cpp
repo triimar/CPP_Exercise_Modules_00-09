@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:08:46 by tmarts            #+#    #+#             */
-/*   Updated: 2023/12/26 19:37:08 by tmarts           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:16:04 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <cstdlib> //for EXIT_FAILURE
 #include <iostream>
 #include <fstream>
+
 int main(int argc, char **argv) {
 	
 	if (argc != 2) {

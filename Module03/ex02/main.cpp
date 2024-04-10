@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:39:52 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 20:09:29 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/09 14:59:35 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-	ClapTrap a("Tobu");
+	// ClapTrap a("Tobu");
 	ScavTrap b("Liilu");
 	FragTrap c("Stuart");
 	std::cout << std::endl;
@@ -29,13 +29,13 @@ int main(void)
 	b.guardGate();
 	std::cout << std::endl;
 
-	a.attack("the wall");
-	a.takeDamage(7);
-	a.beRepaired(3);
-	a.attack("the mosquito");
-	a.takeDamage(7);
-	a.beRepaired(3);
-	std::cout << std::endl;
+	// a.attack("the wall");
+	// a.takeDamage(7);
+	// a.beRepaired(3);
+	// a.attack("the mosquito");
+	// a.takeDamage(7);
+	// a.beRepaired(3);
+	// std::cout << std::endl;
 
 	c.attack("the wall");
 	c.takeDamage(7);

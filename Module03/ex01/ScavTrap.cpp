@@ -6,13 +6,13 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:33:20 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:00:28 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/09 14:43:57 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap(){
+ScavTrap::ScavTrap() : ClapTrap() {
 	
 	_hitPoints = 100;
 	_energyPoints = 50; 
@@ -22,25 +22,22 @@ ScavTrap::ScavTrap() : ClapTrap(){
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 
-	_hitPoints= 100;
+	_hitPoints = 100;
 	_energyPoints = 50; 
 	_attackDamage = 20;
 	std::cout << "ScavTrap " << _name << " exists now." << std::endl;
 }
 
 
-ScavTrap::ScavTrap(const ScavTrap & rhs) {
-	
+ScavTrap::ScavTrap(const ScavTrap & rhs) : ClapTrap(rhs._name) {
+
 	std::cout << "ScavTrap copy constructor called." << std::endl;
-	*this = rhs;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
 
-	this->_name = rhs._name;
-	this->_hitPoints = rhs._hitPoints;
-	this->_hitPoints = rhs._energyPoints;
-	this->_energyPoints = rhs._attackDamage;
+	if (this != &rhs)
+		ClapTrap::operator=(rhs);
 	std::cout << "ScavTrap copy assignment operator called." << std::endl;
 	return *this;
 }

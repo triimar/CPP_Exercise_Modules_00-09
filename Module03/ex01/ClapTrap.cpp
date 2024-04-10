@@ -6,14 +6,14 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 19:08:49 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 19:24:08 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/09 14:16:41 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap():
-	_hitPoints(10), _energyPoints(10), _attackDamage(0) {
+	_name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 
 	std::cout << "Default ClapTrap has been constructed." << std::endl;
 }
@@ -24,19 +24,19 @@ ClapTrap::ClapTrap(std::string name):
 	std::cout << "ClapTrap " << _name << " has been constructed." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap & rhs) {
-
-	std::cout << "Copy constructor called." << std::endl;
-	*this = rhs;
+ClapTrap::ClapTrap(const ClapTrap & rhs) : 
+		_name(rhs._name), _hitPoints(rhs._hitPoints), _energyPoints(rhs._energyPoints), _attackDamage(rhs._attackDamage){
+	std::cout << "ClapTrap copy constructor called." << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
-
-	this->_name = rhs._name;
-	this->_hitPoints = rhs._hitPoints;
-	this->_hitPoints = rhs._energyPoints;
-	this->_energyPoints = rhs._attackDamage;
-	std::cout << "Copy assignment operator called." << std::endl;
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_hitPoints = rhs._hitPoints;
+		this->_hitPoints = rhs._energyPoints;
+		this->_energyPoints = rhs._attackDamage;
+	}
+	std::cout << "ClapTrap copy assignment operator called." << std::endl;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 21:35:48 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:58:46 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/04 14:20:10 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ public:
 	~DiamondTrap();
 	
 	using ScavTrap::attack;
-	// Hit points (FragTrap)
-	// Energy points (ScavTrap)
-	// Attack damage (FragTrap)
-	
+
 	void whoAmI();
 };
 

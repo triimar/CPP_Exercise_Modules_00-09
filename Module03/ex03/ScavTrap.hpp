@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:31:46 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:57:20 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/04 15:11:32 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 
 	void	attack(const std::string &target);	
 	void	guardGate();
+
+	int getEnergyPoints();
 };
 
 #endif

@@ -6,15 +6,15 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 18:57:54 by tmarts            #+#    #+#              #
-#    Updated: 2023/09/21 21:09:44 by tmarts           ###   ########.fr        #
+#    Updated: 2024/04/09 15:14:00 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Frag
+NAME		= Diamond
 CPP			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wshadow
 CPPFLAGS	+= -g3 -fsanitize=address
-SRC			= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp Diamondtrap.cpp
+SRC			= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 INC			= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))

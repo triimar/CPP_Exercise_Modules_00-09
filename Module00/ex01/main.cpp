@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:06:05 by tmarts            #+#    #+#             */
-/*   Updated: 2023/09/14 21:41:08 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/04/05 16:28:02 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main() {
 	while (true) // should check if stream is good std::cin.good() otherwise EOF can cause a problem
 	{
 		std::cout << "Insert command (ADD / SEARCH / EXIT)" << std::endl;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+			break;
 		if (input == "ADD")
 			myPhoneBook.addContact();
 		else if (input == "SEARCH")
